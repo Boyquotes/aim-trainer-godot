@@ -1,6 +1,14 @@
 extends Spatial
 
 var distance = 10000
+var acertos = 0
+var tentativas = 0
+
+signal targetCount
+
+func _process(delta):
+	if Globals.game_ended:
+		pass
 
 func fire():
 	var space_state = get_world().get_direct_space_state()
@@ -9,5 +17,9 @@ func fire():
 	[], 2, true, true)
 	
 	if result and result.collider.has_method("die"):
+		acertos += 1
 		result.collider.die()
-
+		
+	tentativas += 1
+	emit_signal("targetCount", acertos, tentativas)
+	

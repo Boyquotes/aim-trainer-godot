@@ -4,7 +4,7 @@ var target = preload("res://scenes/Target.tscn")
 export var distance_to_spawn = 20
 
 func _ready():
-	SignalBus.connect("targetDestroyed", self, "_generateTarget")
+	Globals.connect("targetDestroyed", self, "_generateTarget")
 
 func _generateTarget():
 	randomize()
