@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Target.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/TargetManager.gd" type="Script" id=3]
+
+[node name="World" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.999974, 0, -0.00720815, 0, 1, 0, 0.00720815, 0, 0.999974, 0, 0, 3 )
+mouse_sens = 0.25
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.4363 )
+script = ExtResource( 3 )
+
+[node name="Target" parent="Spatial" instance=ExtResource( 2 )]
