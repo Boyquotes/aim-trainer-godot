@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/GameManager.gd" type="Script" id=4]
 [ext_resource path="res://scenes/GameOver.tscn" type="PackedScene" id=5]
 [ext_resource path="res://environment/raw_assets/grass_lowres.png" type="Texture" id=6]
-[ext_resource path="res://scenes/CrosshairSelector.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Menu.tscn" type="PackedScene" id=7]
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 6 )
@@ -21,7 +21,7 @@ script = ExtResource( 4 )
 
 [node name="GameOver" parent="." instance=ExtResource( 5 )]
 
-[node name="CrosshairSelector" parent="." instance=ExtResource( 7 )]
+[node name="Menu" parent="." instance=ExtResource( 7 )]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.999974, 0, -0.00720815, 0, 1, 0, 0.00720815, 0, 0.999974, 0, 0, 3 )

@@ -14,7 +14,7 @@ var crosshairs = {
 func _ready():
 	crosshair.set_texture(crosshairs.crosshair3)
 	# MOUSE_MODE_CAPTURED-> The mouse will be hidden and its position locked at the center of the screen.
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	weaponManager.init($Camera/FirePoint)
 
 func _process(delta):

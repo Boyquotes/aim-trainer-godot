@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://scenes/CrosshairSelectorManager.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Menu.gd" type="Script" id=1]
 
-[node name="CrosshairSelector" type="Control"]
+[node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -55,19 +55,29 @@ margin_right = 105.5
 margin_bottom = 6.99998
 text = "Escolha o seu crosshair preferido"
 
-[node name="Button5" type="Button" parent="."]
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
 anchor_left = 0.5
-anchor_top = 0.887
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.887
-margin_left = -41.5
-margin_top = -20.2
-margin_right = 41.5
-margin_bottom = 19.8
+anchor_bottom = 1.0
+margin_left = -49.0
+margin_top = -40.0
+margin_right = 49.0
+
+[node name="Button5" type="Button" parent="HBoxContainer2"]
+margin_right = 47.0
+margin_bottom = 40.0
 text = "Close"
+
+[node name="Button6" type="Button" parent="HBoxContainer2"]
+margin_left = 51.0
+margin_right = 91.0
+margin_bottom = 40.0
+text = "Quit"
 
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button3" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button4" to="." method="_on_Button4_pressed"]
-[connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Button6" to="." method="_on_Button6_pressed"]

@@ -1,7 +1,9 @@
 extends Control
 
 onready var player = get_node("/root/GameManager/Player")
-onready var crosshair_selector_screen = $"."
+onready var menu = $"."
+
+signal closedMenu
 
 var crosshairs = {
 	"crosshair1" : preload("res://crosshairs/crosshair001.png"),
@@ -11,7 +13,7 @@ var crosshairs = {
 }
 
 func _ready():
-	crosshair_selector_screen.visible = false
+	menu.visible = false
 
 func _on_Button_pressed():
 	player.set_crosshair(crosshairs.crosshair1)
@@ -19,17 +21,14 @@ func _on_Button_pressed():
 func _on_Button2_pressed():
 	player.set_crosshair(crosshairs.crosshair2)
 
-func _on_Button3_pressed():
+func _on_Button3_presson_Button3_pressed():
 	player.set_crosshair(crosshairs.crosshair3)
 
 func _on_Button4_pressed():
 	player.set_crosshair(crosshairs.crosshair4)	
 
 func _on_Button5_pressed():
-	crosshair_selector_screen.visible = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	emit_signal("closedMenu", "playing")
 
-
-
-
-
+func _on_Button6_pressed():
+	get_tree().quit()

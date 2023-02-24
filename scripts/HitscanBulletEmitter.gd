@@ -12,6 +12,8 @@ func fire():
 	var result = space_state.intersect_ray(our_position, our_position - global_transform.basis.z * distance,
 	[], 2, true, true)
 	
+	print(result)
+	
 	if result and result.collider.has_method("die"):
 		acertos += 1
 		result.collider.die()
