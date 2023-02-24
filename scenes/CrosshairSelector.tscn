@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/CrosshairSelectorManager.gd" type="Script" id=1]
+
+[node name="CrosshairSelector" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -172.0
+margin_top = -20.0
+margin_right = 172.0
+margin_bottom = 20.0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+margin_right = 83.0
+margin_bottom = 40.0
+text = "Crosshair 1"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+margin_left = 87.0
+margin_right = 170.0
+margin_bottom = 40.0
+text = "Crosshair 2"
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+margin_left = 174.0
+margin_right = 257.0
+margin_bottom = 40.0
+text = "Crosshair 3"
+
+[node name="Button4" type="Button" parent="HBoxContainer"]
+margin_left = 261.0
+margin_right = 344.0
+margin_bottom = 40.0
+text = "Crosshair 4"
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.42
+anchor_right = 0.5
+anchor_bottom = 0.42
+margin_left = -105.5
+margin_top = -7.00002
+margin_right = 105.5
+margin_bottom = 6.99998
+text = "Escolha o seu crosshair preferido"
+
+[node name="Button5" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.887
+anchor_right = 0.5
+anchor_bottom = 0.887
+margin_left = -41.5
+margin_top = -20.2
+margin_right = 41.5
+margin_bottom = 19.8
+text = "Close"
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]

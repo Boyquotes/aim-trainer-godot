@@ -1,23 +1,39 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Target.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/TargetManager.gd" type="Script" id=3]
 [ext_resource path="res://scenes/GameManager.gd" type="Script" id=4]
 [ext_resource path="res://scenes/GameOver.tscn" type="PackedScene" id=5]
+[ext_resource path="res://environment/raw_assets/grass_lowres.png" type="Texture" id=6]
+[ext_resource path="res://scenes/CrosshairSelector.tscn" type="PackedScene" id=7]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 6 )
+uv1_scale = Vector3( 100, 100, 1 )
+
+[sub_resource type="CubeMesh" id=1]
+material = SubResource( 2 )
+size = Vector3( 200, 1, 200 )
 
 [node name="GameManager" type="Spatial"]
 script = ExtResource( 4 )
 
 [node name="GameOver" parent="." instance=ExtResource( 5 )]
 
+[node name="CrosshairSelector" parent="." instance=ExtResource( 7 )]
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.999974, 0, -0.00720815, 0, 1, 0, 0.00720815, 0, 0.999974, 0, 0, 3 )
 mouse_sens = 0.25
 
 [node name="Target" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.4363 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, -10 )
 
 [node name="TargetManager" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.4363 )
 script = ExtResource( 3 )
+
+[node name="Ground" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+mesh = SubResource( 1 )

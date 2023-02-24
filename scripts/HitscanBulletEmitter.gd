@@ -6,10 +6,6 @@ var tentativas = 0
 
 signal targetCount
 
-func _process(delta):
-	if Globals.game_ended:
-		pass
-
 func fire():
 	var space_state = get_world().get_direct_space_state()
 	var our_position = global_transform.origin
